@@ -1,0 +1,9 @@
+raster:
+  grpc:
+    host: localhost
+    port: 2525
+logging:
+  colored: true
+  level: error
+  output: stdout
+  report-caller: true

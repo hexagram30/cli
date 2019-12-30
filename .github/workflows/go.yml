@@ -1,0 +1,46 @@
+name: Go
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.12
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.12
+      id: go
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v1
+
+    - name: Get dependencies
+      run: |
+        go get -v -t -d ./...
+        if [ -f Gopkg.toml ]; then
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+            dep ensure
+        fi
+
+    - name: Run Static Analysis
+      run: make lint
+
+    - name: Run Tests
+      run: make test
+
+    - name: Create Binaries
+      run: make build
+
+    - name: Notify CI/CD Slack Channel
+      uses: innocarpe/actions-slack@v1
+      with:
+        status: ${{ job.status }}
+        success_text: '✅ Build for ${{ github.repository }} succeeded! 😄🌈🐴🚢🐿 (commit id: ${{ github.sha }})'
+        failure_text: '❌ Build for ${{ github.repository }} failed! 🤬💣🔥🚒 (commit id: ${{ github.sha }})'
+        cancelled_text: '🚧 Build for ${{ github.repository }} was cancelled ... 😯🦡 (commit id: ${{ github.sha }})'
+      env:
+        GITHUB_TOKEN: ${{ secrets.CICD_BOT_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.CICD_BOT_WEBHOOK }}
+      if: always()
