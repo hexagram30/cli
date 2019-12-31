@@ -1,9 +1,13 @@
+dice:
+  grpc:
+    host: localhost
+    port: 2344
 raster:
   grpc:
     host: localhost
     port: 2525
 logging:
   colored: true
-  level: error
+  level: debug
   output: stdout
   report-caller: true

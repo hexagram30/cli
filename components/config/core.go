@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"strings"
 
 	logger "github.com/geomyidia/zylog/logger"
@@ -35,8 +36,23 @@ func init() {
 	}
 }
 
+// DiceRPCConfig ...
+type DiceRPCConfig struct {
+	Host string
+	Port int
+}
+
+// DiceConfig ...
+type DiceConfig struct {
+	RPC *DiceRPCConfig
+}
+
 // Config ...
 type Config struct {
+	// We need to create a Dice config, since the Dice Go library is actually
+	// part of a Clojure project with no Go configuration present.
+	Dice *DiceConfig
+	// The Raster client config is taken from the Raster project
 	Logging *logger.ZyLogOptions
 }
 
@@ -55,6 +71,12 @@ type Config struct {
 // in ./components/logging.go, Setup).
 func New() *Config {
 	return &Config{
+		Dice: &DiceConfig{
+			RPC: &DiceRPCConfig{
+				Host: viper.GetString("dice.grpc.host"),
+				Port: viper.GetInt("dice.grpc.port"),
+			},
+		},
 		Logging: &logger.ZyLogOptions{
 			Colored:      viper.GetBool("logging.colored"),
 			Level:        viper.GetString("logging.level"),
@@ -62,4 +84,9 @@ func New() *Config {
 			ReportCaller: viper.GetBool("logging.report-caller"),
 		},
 	}
+}
+
+// DiceConnectionString ...
+func (c *Config) DiceConnectionString() string {
+	return fmt.Sprintf("%s:%d", c.Dice.RPC.Host, c.Dice.RPC.Port)
 }

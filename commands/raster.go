@@ -14,7 +14,7 @@ func init() {
 var rasterCmd = &cobra.Command{
 	Use:   "raster",
 	Short: "Operations against the Hexagram30 Raster server",
-	Long:  longDescription,
+	Long:  rasterLongDescription,
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		SetupRasterConnection()
 	},
@@ -36,7 +36,7 @@ func TeardownRasterConnection() {
 	rasterClient.Close()
 }
 
-const longDescription = `
+const rasterLongDescription = `
 
 This is a command line tool for querying the Hexagram30 raster service,
 currently backed by RedixDB. This tool exercises a full path from client

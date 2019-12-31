@@ -13,13 +13,14 @@ type CLI struct {
 	components.Default
 }
 
+var cli = &CLI{}
+
 // NewCLI ...
 func NewCLI() *CLI {
-	cli := CLI{}
 	cli.AppName = config.AppName
 	cli.AppAbbv = config.AppName
 	cli.ProjectPath = common.CallerPaths().DotPath
-	return &cli
+	return cli
 }
 
 // // Close the gRPC connection
