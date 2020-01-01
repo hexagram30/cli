@@ -2,7 +2,6 @@ package commands
 
 import (
 	"encoding/json"
-	"fmt"
 
 	rasterapi "github.com/hexagram30/raster/api"
 	log "github.com/sirupsen/logrus"
@@ -18,11 +17,12 @@ var rasterVersionCmd = &cobra.Command{
 	Short: "raster version data as JSON",
 	Long:  "raster version data as JSON (for pretty formatting, pipe to `jq .`)",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(gRPCVersionToJSON(rasterClient.Version()))
+		println(RasterRPCVersionToJSON(rasterClient.Version()))
 	},
 }
 
-func gRPCVersionToJSON(structData *rasterapi.VersionReply) string {
+// RasterRPCVersionToJSON ...
+func RasterRPCVersionToJSON(structData *rasterapi.VersionReply) string {
 	jsonData, err := json.Marshal(structData)
 	if err != nil {
 		log.Error(err)
