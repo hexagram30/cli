@@ -9,10 +9,10 @@ import (
 )
 
 func init() {
-	diceCmd.AddCommand(diceVersionCmd)
+	rollCmd.AddCommand(rollVersionCmd)
 }
 
-var diceVersionCmd = &cobra.Command{
+var rollVersionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "the dice server version",
 	Long:  "get the version of dice server that's currently being run",

@@ -6,10 +6,10 @@ import (
 )
 
 func init() {
-	diceCmd.AddCommand(dicePingCmd)
+	rollCmd.AddCommand(rollPingCmd)
 }
 
-var dicePingCmd = &cobra.Command{
+var rollPingCmd = &cobra.Command{
 	Use:   "ping",
 	Short: "check the dice server status",
 	Long:  "check the dice server status",
