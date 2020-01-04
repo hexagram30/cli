@@ -3,7 +3,7 @@ package commands
 import (
 	"encoding/json"
 
-	diceapi "github.com/hexagram30/dice/src/golang/api"
+	"github.com/hexagram30/protocols/src/golang/common"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -24,7 +24,7 @@ var rollVersionCmd = &cobra.Command{
 }
 
 // DiceRPCVersionToJSON ...
-func DiceRPCVersionToJSON(structData *diceapi.VersionReply) string {
+func DiceRPCVersionToJSON(structData *common.VersionReply) string {
 	jsonData, err := json.Marshal(structData)
 	if err != nil {
 		log.Error(err)

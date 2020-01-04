@@ -66,6 +66,17 @@ github.com/hexagram30/dice v0.1.2-SNAPSHOT h1:WtdBKB57g7K0/uJJzWKbJZk8n8mjwt1/1K
 github.com/hexagram30/dice v0.1.2-SNAPSHOT/go.mod h1:DipAndaYSBbv3aI1u202e+WrvFxwS/FHxGinIFVZLZg=
 github.com/hexagram30/dice v0.1.3-SNAPSHOT h1:+HP6PdmhN40H8QxchzKBLRGgl3O+CoqLxtgcOvSmivg=
 github.com/hexagram30/dice v0.1.3-SNAPSHOT/go.mod h1:DipAndaYSBbv3aI1u202e+WrvFxwS/FHxGinIFVZLZg=
+github.com/hexagram30/dice v0.1.5-SNAPSHOT h1:XqIDkhYPAgbpny8WliUjY7wrCcQgzGQBDzmfI84ovBA=
+github.com/hexagram30/dice v0.1.5-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.6-SNAPSHOT h1:lxHUq99Gpl0sHN6sDotFbSP8MiYFZF/GmuAVNqiu6do=
+github.com/hexagram30/dice v0.1.6-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.7-SNAPSHOT h1:6gyYGWJgqX0Tl8cl1BoBAFEXlBMboI8l1IdKJ7uEDqc=
+github.com/hexagram30/dice v0.1.7-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.8-SNAPSHOT h1:3fe+RmV1ITFPKeEkM1iIfZTR7JZQB1MGcbOZwxW5XFo=
+github.com/hexagram30/dice v0.1.8-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/protocols v0.1.0-SNAPSHOT/go.mod h1:aSdBz3xoqVq2sd73n86ymhbE3tD+L0sTVbieY1MBFqg=
+github.com/hexagram30/protocols v0.1.1-SNAPSHOT h1:vhYqWBy3DhoWmCgYazT8WaOjhTX4ZnolNgSZt3UNjLE=
+github.com/hexagram30/protocols v0.1.1-SNAPSHOT/go.mod h1:aSdBz3xoqVq2sd73n86ymhbE3tD+L0sTVbieY1MBFqg=
 github.com/hexagram30/raster v0.2.0 h1:uFBnePcKz0NdJYTA0COwG+6k+Jcjyg620Z7TzKbwjMQ=
 github.com/hexagram30/raster v0.2.0/go.mod h1:AgXcDWmdgspVLo4B2SZfUKVgAd1qUBNWS3p+s1WNGaM=
 github.com/hpcloud/tail v1.0.0 h1:nfCOvKYfkgYP8hkirhJocXT2+zOD8yUNjXaWfTlyFKI=

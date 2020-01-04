@@ -2,6 +2,8 @@ package commands
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 
 	"github.com/hexagram30/dice/src/golang/api"
 	diceclient "github.com/hexagram30/dice/src/golang/client"
@@ -23,6 +25,10 @@ var rollCmd = &cobra.Command{
 		SetupDiceConnection()
 	},
 	Run: func(cmd *cobra.Command, args []string) {
+		if len(args) == 0 {
+			println(cmd.Usage())
+			os.Exit(1)
+		}
 		DispatchRolls(args)
 	},
 	PersistentPostRun: func(cmd *cobra.Command, args []string) {
@@ -32,15 +38,27 @@ var rollCmd = &cobra.Command{
 
 // DispatchRolls ...
 func DispatchRolls(args []string) {
+	die := args[0]
 	switch {
 	case len(args) == 1:
-		result := diceClient.RollOnce(args[0])
+		result := diceClient.RollOnce(die)
 		println(formatRollOnce(result))
+	case len(args) == 2:
+		rollCount, err := strconv.ParseInt(args[1], 10, 32)
+		if err != nil {
+			log.Fatal(err)
+		}
+		results := diceClient.RollRepeated(die, rollCount)
+		println(formatRollRepeated(results))
 	}
 }
 
 func formatRollOnce(result *api.DiceRoll) string {
 	return fmt.Sprintf("%d", result.GetResult())
+}
+
+func formatRollRepeated(results *api.DiceRepeatedRolls) string {
+	return fmt.Sprintf("%s: %d", results.GetDiceType(), results.GetResults())
 }
 
 // SetupDiceConnection ...
