@@ -5,6 +5,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/crosscode-nl/partition"
 	"github.com/hexagram30/dice/src/golang/api"
 	diceclient "github.com/hexagram30/dice/src/golang/client"
 	log "github.com/sirupsen/logrus"
@@ -25,11 +26,19 @@ var rollCmd = &cobra.Command{
 		SetupDiceConnection()
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		if len(args) == 0 {
+		argCount := len(args)
+		switch {
+		case argCount == 0:
+			log.Error("One or more arguments are required for rolling dice")
 			println(cmd.Usage())
 			os.Exit(1)
+		case argCount >= 2 && argCount%2 != 0:
+			log.Error("Various rolls requires an even number of arguments")
+			println(cmd.Usage())
+			os.Exit(1)
+		default:
+			DispatchRolls(args)
 		}
-		DispatchRolls(args)
 	},
 	PersistentPostRun: func(cmd *cobra.Command, args []string) {
 		TeardownDiceConnection()
@@ -42,23 +51,43 @@ func DispatchRolls(args []string) {
 	switch {
 	case len(args) == 1:
 		result := diceClient.RollOnce(die)
-		println(formatRollOnce(result))
+		formatRollOnce(result)
 	case len(args) == 2:
-		rollCount, err := strconv.ParseInt(args[1], 10, 32)
+		rollCount, err := strconv.ParseInt(args[1], 10, 64)
 		if err != nil {
 			log.Fatal(err)
 		}
 		results := diceClient.RollRepeated(die, rollCount)
-		println(formatRollRepeated(results))
+		formatRollRepeated(results)
+	default:
+		var dice []string
+		var counts []int64
+		partition.ToFunc(len(args), 2, func(l int, h int) {
+			roll := args[l:h]
+			dice = append(dice, roll[0])
+			count, err := strconv.ParseInt(roll[1], 10, 64)
+			if err != nil {
+				log.Fatal(err)
+			}
+			counts = append(counts, count)
+		})
+		results := diceClient.RollVarious(dice, counts)
+		formatRollVarious(results)
 	}
 }
 
-func formatRollOnce(result *api.DiceRoll) string {
-	return fmt.Sprintf("%d", result.GetResult())
+func formatRollOnce(roll *api.DiceRoll) {
+	fmt.Printf("%s:\n\t%d\n", roll.GetDiceType(), roll.GetResult())
 }
 
-func formatRollRepeated(results *api.DiceRepeatedRolls) string {
-	return fmt.Sprintf("%s: %d", results.GetDiceType(), results.GetResults())
+func formatRollRepeated(rolls *api.DiceRepeatedRolls) {
+	fmt.Printf("%s:\n\t%d\n", rolls.GetDiceType(), rolls.GetResults())
+}
+
+func formatRollVarious(rolls *api.DiceVariousRolls) {
+	for _, roll := range rolls.GetResults() {
+		fmt.Printf("%s:\n\t%v\n", roll.GetDiceType(), roll.GetResults())
+	}
 }
 
 // SetupDiceConnection ...

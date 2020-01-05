@@ -17,6 +17,8 @@ github.com/coreos/go-semver v0.2.0/go.mod h1:nnelYz7RCh+5ahJtPPxZlU+153eP4D4r3Ee
 github.com/coreos/go-systemd v0.0.0-20190321100706-95778dfbb74e/go.mod h1:F5haX7vjVVG0kc13fIWeqUViNPyEJxv/OmvnBo0Yme4=
 github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f/go.mod h1:E3G3o1h8I7cfcXa63jLwjI0eiQQMgzzUDFVpN/nH/eA=
 github.com/cpuguy83/go-md2man v1.0.10/go.mod h1:SmD6nW6nTyfqj6ABTjUi3V3JVMnlJmwcJI5acqYI6dE=
+github.com/crosscode-nl/partition v1.0.0 h1:hoKT3l+bmaXOlZpGOIElF5FTdBxpck6wzV2mXcc8rRc=
+github.com/crosscode-nl/partition v1.0.0/go.mod h1:fcXWTdCoWcgDmZTG/ZIy+sGZleuPrLIZlZW2cujWTx8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -74,6 +76,10 @@ github.com/hexagram30/dice v0.1.7-SNAPSHOT h1:6gyYGWJgqX0Tl8cl1BoBAFEXlBMboI8l1I
 github.com/hexagram30/dice v0.1.7-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
 github.com/hexagram30/dice v0.1.8-SNAPSHOT h1:3fe+RmV1ITFPKeEkM1iIfZTR7JZQB1MGcbOZwxW5XFo=
 github.com/hexagram30/dice v0.1.8-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.9-SNAPSHOT h1:+gEI5IwGnLemPSiHMo0d2PfKNUUPJ7TnaNUUmvGLMns=
+github.com/hexagram30/dice v0.1.9-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.10-SNAPSHOT h1:IIQeJrL9Oh+sGvXpfnRM5EdyS7pI/i86qKTd7isyFbg=
+github.com/hexagram30/dice v0.1.10-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
 github.com/hexagram30/protocols v0.1.0-SNAPSHOT/go.mod h1:aSdBz3xoqVq2sd73n86ymhbE3tD+L0sTVbieY1MBFqg=
 github.com/hexagram30/protocols v0.1.1-SNAPSHOT h1:vhYqWBy3DhoWmCgYazT8WaOjhTX4ZnolNgSZt3UNjLE=
 github.com/hexagram30/protocols v0.1.1-SNAPSHOT/go.mod h1:aSdBz3xoqVq2sd73n86ymhbE3tD+L0sTVbieY1MBFqg=
