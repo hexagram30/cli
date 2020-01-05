@@ -60,6 +60,31 @@ $ hxgm30 roll d6 10
 d6: [1 5 2 2 4 2 2 2 6 1]
 ```
 
+Various rolls combined:
+
+```shell
+$ hxgm30 roll d6 10 d4 4 d20 2
+```
+```
+d6:
+        [5 4 1 3 1 2 1 1 3 1]
+d4:
+        [2 4 4 3]
+d20:
+        [12 12]
+```
+
+Roll with metadata:
+
+```shell
+hxgm30 roll meta d6 10
+```
+```
+d6:
+        [1 6 3 3 4 3 5 5 3 6]
+        average:3.9 count:10 high:6 low:1 sum:39
+```
+
 ## License
 
 ```

@@ -33,7 +33,7 @@ var rollCmd = &cobra.Command{
 			println(cmd.Usage())
 			os.Exit(1)
 		case argCount >= 2 && argCount%2 != 0:
-			log.Error("Various rolls requires an even number of arguments")
+			log.Error("Various rolls require an even number of arguments")
 			println(cmd.Usage())
 			os.Exit(1)
 		default:

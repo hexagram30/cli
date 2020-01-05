@@ -80,6 +80,10 @@ github.com/hexagram30/dice v0.1.9-SNAPSHOT h1:+gEI5IwGnLemPSiHMo0d2PfKNUUPJ7TnaN
 github.com/hexagram30/dice v0.1.9-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
 github.com/hexagram30/dice v0.1.10-SNAPSHOT h1:IIQeJrL9Oh+sGvXpfnRM5EdyS7pI/i86qKTd7isyFbg=
 github.com/hexagram30/dice v0.1.10-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.11-SNAPSHOT h1:Day2cFErSeTs5ZIqNhhPmbl5NKmMbDZT1S55l+kC6AU=
+github.com/hexagram30/dice v0.1.11-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
+github.com/hexagram30/dice v0.1.12-SNAPSHOT h1:e8ckFDxCopT9SG8lkQeO/eNq52tn+4qL15mKXAcM34U=
+github.com/hexagram30/dice v0.1.12-SNAPSHOT/go.mod h1:I36vPrSJ3doAVEhXnYuELulGL6t9l6NeHbwWGFlfJTI=
 github.com/hexagram30/protocols v0.1.0-SNAPSHOT/go.mod h1:aSdBz3xoqVq2sd73n86ymhbE3tD+L0sTVbieY1MBFqg=
 github.com/hexagram30/protocols v0.1.1-SNAPSHOT h1:vhYqWBy3DhoWmCgYazT8WaOjhTX4ZnolNgSZt3UNjLE=
 github.com/hexagram30/protocols v0.1.1-SNAPSHOT/go.mod h1:aSdBz3xoqVq2sd73n86ymhbE3tD+L0sTVbieY1MBFqg=
