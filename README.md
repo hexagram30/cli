@@ -29,7 +29,6 @@ Having done the steps above for setting up an environment (or something similar)
 
 ```shell
 $ make build
-$ hxgm30 help
 ```
 
 ## Installation
@@ -40,50 +39,15 @@ Same steps as in the build, and then:
 $ make install
 ```
 
-## Dice Roller
+## Documentation
 
-Single roll:
+### Dice Roller
 
-```shell
-$ hxgm30 roll d20
-```
-```
-12
-```
-
-Multiple rolls of the same die:
-
-```shell
-$ hxgm30 roll d6 10
-```
-```
-d6: [1 5 2 2 4 2 2 2 6 1]
-```
-
-Various rolls combined:
-
-```shell
-$ hxgm30 roll d6 10 d4 4 d20 2
-```
-```
-d6:
-        [5 4 1 3 1 2 1 1 3 1]
-d4:
-        [2 4 4 3]
-d20:
-        [12 12]
-```
-
-Roll with metadata:
-
-```shell
-hxgm30 roll meta d6 10
-```
-```
-d6:
-        [1 6 3 3 4 3 5 5 3 6]
-        average:3.9 count:10 high:6 low:1 sum:39
-```
+Two sources are available:
+* The tool itself:
+  * `hxgm30 help roll`
+  * `hxgm30 help roll meta`
+* The [dice-roller CLI docs](./docs/dice-roller.md).
 
 ## License
 

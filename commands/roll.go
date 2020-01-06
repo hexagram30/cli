@@ -106,7 +106,17 @@ func TeardownDiceConnection() {
 	log.Info(("Closed connection to dice gRPC server."))
 }
 
-const rollLongDescription = `
+const rollLongDescription = `There are several formats supported for rolling dice:
 
-TBD
+    * a single roll
+    * mulitple rolls of a single die
+    * multiple rolls of various dice
+
+  Supported dice include d4, d6, d8, d10, d12, d20, d100
+
+  Examples:
+
+    $ ./bin/hxgm30 roll d20
+    $ ./bin/hxgm30 roll d20 5
+    $ ./bin/hxgm30 roll d20 5 d12 2 d8 2 d6 6 d4 3
 `

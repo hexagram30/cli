@@ -81,13 +81,26 @@ func formatMetaRollRepeated(metaRoll *api.MetaRoll) {
 	}
 }
 
-func formatMetaRollVarious(rolls *api.MetaRolls) {
-	// for _, roll := range rolls.GetResults() {
-	// 	fmt.Printf("%s:\n\t%v\n", roll.GetDiceType(), roll.GetResults())
-	// }
+func formatMetaRollVarious(metaRolls *api.MetaRolls) {
+	for _, metaRoll := range metaRolls.GetResults() {
+		formatMetaRollRepeated(metaRoll)
+	}
 }
 
-const rollMetaLongDescription = `
+const rollMetaLongDescription = `Similar to the regular roll command, there is more than one supported format
+  for rolling dice with roll metadata:
 
-TBD
+    * mulitple rolls of a single die
+    * multiple rolls of various dice
+
+  The metadata are statistics for the rolls, and include average, total roll
+  count, highest roll, lowest roll, and a sum of all rolls.
+
+  Note there is no metadata for a single roll (the statistics for that are not
+  very interesting).
+
+  Examples:
+
+    $ ./bin/hxgm30 roll meta d20 5
+    $ ./bin/hxgm30 roll meta d20 5 d12 2 d8 2 d6 6 d4 3
 `
